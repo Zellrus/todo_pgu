@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class StoreProject extends Controller
 {
-    //
+    public function __invoke()
+    {
+
+    }
 }
