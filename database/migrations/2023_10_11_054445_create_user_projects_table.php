@@ -16,12 +16,15 @@ return new class extends Migration
 
             $table->unsignedBigInteger("user_id");
             $table->unsignedBigInteger("project_id");
+
             $table->timestamps();
 
             $table->index("user_id","user_project_user_idx");
             $table->index("project_id","user_project_project_idx");
+
             $table->foreign('user_id','user_tag_user_fk')->on("users")->references("id");
             $table->foreign('project_id','user_project_project_fk')->on('projects')->references("id");
+
         });
     }
 

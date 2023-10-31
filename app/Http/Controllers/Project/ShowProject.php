@@ -9,7 +9,9 @@ class ShowProject extends Controller
 {
     public function __invoke()
     {
-        $projects = User::find(auth()->user())->projects();
-        return response($projects);
+        $projects = User::find(auth()->user()->id)->projects;
+        //  dd($projects);
+         return response($projects);
+        // return response(200);
     }
 }

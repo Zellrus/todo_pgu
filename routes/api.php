@@ -19,6 +19,6 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 });
 Route::group(['middleware' => 'auth:sanctum'],function (){
     Route::get('/projects',App\Http\Controllers\Project\ShowProject::class);
-    Route::post('/projects',\App\Http\Controllers\Project\StoreProject::class);
+    Route::post('/storeproject',\App\Http\Controllers\Project\StoreProject::class);
 
 });

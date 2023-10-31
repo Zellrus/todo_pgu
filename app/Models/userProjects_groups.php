@@ -5,10 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Column extends Model
+class userProjects_groups extends Model
 {
     use HasFactory;
-    public function project(){
-        return $this->hasOne(Project::class,'project_id','id');
-    }
 }
