@@ -23,3 +23,4 @@ Route::group(['middleware' => 'auth:sanctum'],function (){
     Route::post('/projects',\App\Http\Controllers\Project\StoreProject::class);
     Route::post('/projects/{edit}', UpdateProject::class);
 });
+//Route::get('/projects',App\Http\Controllers\Project\ShowProject::class);

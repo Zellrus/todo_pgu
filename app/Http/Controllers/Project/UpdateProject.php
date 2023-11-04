@@ -13,6 +13,5 @@ class UpdateProject extends Controller
     {
             $data= $request->validated();
             $project->update($data);
-            
     }
 }
