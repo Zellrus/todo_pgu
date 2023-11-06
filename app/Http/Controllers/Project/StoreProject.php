@@ -17,6 +17,6 @@ class StoreProject extends Controller
         //dd(auth()->user()->id);
         $project= Project::create($data);
       $project->users()->attach(auth()->user()->id);
-      return response($project,200);
+      return response($project,201);
     }
 }
