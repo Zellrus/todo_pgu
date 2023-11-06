@@ -23,7 +23,7 @@ return new class extends Migration
             $table->index("project_id","user_project_project_idx");
 
             $table->foreign('user_id','user_tag_user_fk')->on("users")->references("id");
-            $table->foreign('project_id','user_project_project_fk')->on('projects')->references("id");
+            $table->foreign('project_id','user_project_project_fk')->on('projects')->references("id")->onDelete('cascade');
 
         });
     }
