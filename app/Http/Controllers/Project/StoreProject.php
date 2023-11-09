@@ -12,11 +12,12 @@ class StoreProject extends Controller
     public function __invoke(StoreRequest $request)
     {
         $data=$request->validated();
-//        $users = $data['users'];
-//        unset($data['users']);
+//       $users = $data['users'];
+//      unset($data['users']);
         //dd(auth()->user()->id);
         $project= Project::create($data);
       $project->users()->attach(auth()->user()->id);
+//      $project->users()->attach($users);
       return response($project,201);
     }
 }
