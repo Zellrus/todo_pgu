@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Column extends Model
 {
     use HasFactory;
-    public function project(){
-        return $this->hasOne(Project::class,'project_id','id');
+    protected $guarded=false;
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
     }
 }

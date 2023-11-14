@@ -4,16 +4,24 @@ namespace App\Http\Controllers\Project;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Project\ProjectResource;
+use App\Models\Project;
 use App\Models\User;
 
-class ShowProject extends Controller
+class ShowController extends Controller
 {
-    public function __invoke()
+    public function all()
     {
-        $projects = User::find(auth()->user()->id)->projects;
+        $projects = (User::find(auth()->user()->id)->projects);
+        //$columns = $projects->columns;
+//        dd($projects);
         return ProjectResource::collection($projects);
 //          dd($projects);
          //return response($projects);
         // return response(200);
+    }
+    public function one(Project $project)
+    {
+
+       return $project->columns;
     }
 }
