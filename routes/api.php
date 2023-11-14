@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Project\UpdateProject;
+use App\Http\Controllers\Project\UpdateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,9 +19,13 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::group(['middleware' => 'auth:sanctum'],function (){
-    Route::get('/projects',App\Http\Controllers\Project\ShowProject::class);
-    Route::post('/projects',\App\Http\Controllers\Project\StoreProject::class);
-    Route::patch('/projects/{project}', UpdateProject::class);
-    Route::delete('/projects/{project}',\App\Http\Controllers\Project\DeleteProject::class);
+    Route::get('/projects',[App\Http\Controllers\Project\ShowController::class,'all']);
+    Route::get('/projects/{project}',[App\Http\Controllers\Project\ShowController::class,'one']);
+    Route::post('/projects',\App\Http\Controllers\Project\StoreController::class);
+    Route::patch('/projects/{project}', UpdateController::class);
+    Route::delete('/projects/{project}',\App\Http\Controllers\Project\DeleteController::class);
+
+
+    Route::post('/task',\App\Http\Controllers\Task\StoreController::class);
 });
-//Route::get('/projects',App\Http\Controllers\Project\ShowProject::class);
+

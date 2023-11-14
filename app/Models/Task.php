@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Column extends Model
+class Task extends Model
 {
     use HasFactory;
-    public function project(){
-        return $this->hasOne(Project::class,'project_id','id');
+    protected $guarded=false;
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
     }
 }

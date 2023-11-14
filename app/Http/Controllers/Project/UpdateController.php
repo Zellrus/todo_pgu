@@ -8,7 +8,7 @@ use App\Http\Resources\Project\ProjectResource;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
-class UpdateProject extends Controller
+class UpdateController extends Controller
 {
     public function __invoke(UpdateRequest $request, Project $project)
     {
