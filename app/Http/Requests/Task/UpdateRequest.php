@@ -9,7 +9,7 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-//            'project_id'=>'required|integer',
+            'column_id'=>'integer',
             'name'=>'string',
             'description'=>'string',
             'color'=>'string',

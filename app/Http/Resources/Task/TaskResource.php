@@ -16,6 +16,8 @@ class TaskResource extends JsonResource
     {
         return [
             'project_id'=>$this->project_id,
+            'column_id'=>$this->column_id,
+            'column_title'=>$this->column->title,
             'id'=>$this->id,
             'name'=>$this->name,
             'color'=>$this->color,

@@ -22,6 +22,7 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'column_id'=>'integer',
             'project_id'=>'required|integer',
             'name'=>'required|string',
             'description'=>'string',

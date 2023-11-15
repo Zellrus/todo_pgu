@@ -20,10 +20,12 @@ return new class extends Migration
              $table->unsignedBigInteger('project_id');
              $table->index('project_id','tasks_project_idx');
              $table->foreign('project_id','tasks_project_fk')->on('projects')->references('id')->onDelete('cascade');
+             $table->unsignedBigInteger('column_id')->default(1);
+             $table->index('column_id','tasks_column_idx');
+             $table->foreign('column_id','tasks_column_fk')->on('columns')->references('id');
              $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */

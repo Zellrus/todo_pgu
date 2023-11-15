@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Group;
+use App\Models\Column;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,14 +20,17 @@ class DatabaseSeeder extends Seeder
              'surname'=>'Sh',
              'email' => 'test@example.com',
          ]);
-         Group::factory()->create([
-            'group_name'=>'Администратор',
+         Column::factory()->create([
+             'id'=>'1',
+             'title'=>'Отложено',
          ]);
-        Group::factory()->create([
-            'group_name'=>'Редактор',
+        Column::factory()->create([
+            'id'=>'2',
+            'title'=>'В процессе',
         ]);
-        Group::factory()->create([
-            'group_name'=>'Может смотреть',
+        Column::factory()->create([
+            'id'=>'3',
+            'title'=>'Завершено',
         ]);
     }
 }

@@ -13,4 +13,7 @@ class Task extends Model
     {
         return $this->belongsTo(Project::class);
     }
+    public function column(){
+        return $this->belongsTo(Column::class,'column_id','id');
+    }
 }

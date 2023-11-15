@@ -22,6 +22,7 @@ class ShowController extends Controller
     }
     public function one(Project $project)
     {
+
      return TaskResource::collection( $project->tasks);
     }
 }
