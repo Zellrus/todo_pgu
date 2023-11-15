@@ -15,7 +15,7 @@ return new class extends Migration
              $table->id();
              $table->string('name');
              $table->string('color');
-             $table->date('deadline');
+             $table->dateTime('deadline');
              $table->string('description')->nullable();
              $table->unsignedBigInteger('project_id');
              $table->index('project_id','tasks_project_idx');
