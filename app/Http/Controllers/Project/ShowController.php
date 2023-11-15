@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Project;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Project\ProjectResource;
+use App\Http\Resources\Task\TaskResource;
 use App\Models\Project;
 use App\Models\User;
 
@@ -21,7 +22,6 @@ class ShowController extends Controller
     }
     public function one(Project $project)
     {
-
-       return $project->columns;
+     return TaskResource::collection( $project->tasks);
     }
 }

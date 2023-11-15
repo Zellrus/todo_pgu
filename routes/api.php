@@ -26,6 +26,6 @@ Route::group(['middleware' => 'auth:sanctum'],function (){
     Route::delete('/projects/{project}',\App\Http\Controllers\Project\DeleteController::class);
 
 
-    Route::post('/columns',\App\Http\Controllers\Column\StoreController::class);
+    Route::post('/task',\App\Http\Controllers\Task\StoreController::class);
 });
 
