@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Project;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Project\ProjectResource;
+use App\Http\Resources\Project\OneProjectResource;
 use App\Http\Resources\Task\TaskResource;
 use App\Models\Project;
 use App\Models\User;
@@ -22,7 +23,14 @@ class ShowController extends Controller
     }
     public function one(Project $project)
     {
-
-     return TaskResource::collection( $project->tasks);
+//    $project['tasks'] = $project->tasks;
+//    return $project;
+     return new OneProjectResource($project);
+    }
+    public function tasks($id)
+    {
+        $project=Project::find($id);
+//        dd($project);
+        return TaskResource::collection($project->tasks);
     }
 }

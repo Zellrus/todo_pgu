@@ -21,6 +21,7 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 Route::group(['middleware' => 'auth:sanctum'],function (){
     Route::get('/projects',[App\Http\Controllers\Project\ShowController::class,'all']);
     Route::get('/projects/{project}',[App\Http\Controllers\Project\ShowController::class,'one']);
+    Route::get('/projects/{id_project}/tasks',[\App\Http\Controllers\Project\ShowController::class,'tasks']);
     Route::post('/projects',\App\Http\Controllers\Project\StoreController::class);
     Route::patch('/projects/{project}', UpdateController::class);
     Route::delete('/projects/{project}',\App\Http\Controllers\Project\DeleteController::class);
