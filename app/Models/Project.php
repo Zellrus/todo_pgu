@@ -16,5 +16,8 @@ class Project extends Model
     {
         return $this->hasMany(Task::class);
     }
+    public function columns(){
+        return $this->belongsToMany(Column::class, "column_projects","project_id","column_id");
+    }
 
 }

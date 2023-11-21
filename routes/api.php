@@ -21,12 +21,11 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 Route::group(['middleware' => 'auth:sanctum'],function (){
     Route::get('/projects',[App\Http\Controllers\Project\ShowController::class,'all']);
     Route::get('/projects/{project}',[App\Http\Controllers\Project\ShowController::class,'one']);
-    Route::get('/projects/{id_project}/tasks',[\App\Http\Controllers\Project\ShowController::class,'tasks']);
     Route::post('/projects',\App\Http\Controllers\Project\StoreController::class);
     Route::patch('/projects/{project}', UpdateController::class);
     Route::delete('/projects/{project}',\App\Http\Controllers\Project\DeleteController::class);
 
-
+    Route::get('/tasks/{project}',[\App\Http\Controllers\Project\ShowController::class,'tasks']);
     Route::post('/tasks',\App\Http\Controllers\Task\StoreController::class);
     Route::patch('/tasks/{task}', \App\Http\Controllers\Task\UpdateController::class);
     Route::delete('/tasks/{task}',\App\Http\Controllers\Task\DeleteController::class);

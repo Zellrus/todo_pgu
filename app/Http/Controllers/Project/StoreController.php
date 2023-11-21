@@ -17,6 +17,11 @@ class StoreController extends Controller
 //      unset($data['users']);
         //dd(auth()->user()->id);
         $project= Project::create($data);
+
+        //завтра добавишь attach для колонок_проджектов шоб добавить айдишники колонок в бд
+
+
+//        \App\Http\Controllers\Column\StoreController();
         $project->users()->attach(auth()->user()->id);
 //      $project->users()->attach($users);
       return new ProjectResource($project);

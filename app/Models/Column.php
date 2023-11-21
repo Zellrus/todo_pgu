@@ -12,4 +12,7 @@ class Column extends Model
     public function task(){
         return $this->hasMany(Task::class,'column_id','id');
     }
+    public function projects(){
+        return $this->belongsToMany(Project::class, "column_projects","column_id","project_id");
+    }
 }
