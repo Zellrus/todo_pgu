@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Resources\Task;
+namespace App\Http\Resources\Column;
 
+use App\Http\Resources\Task\TaskResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class TaskResource extends JsonResource
+class ColumnResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,11 +17,10 @@ class TaskResource extends JsonResource
     {
         return [
             'id'=>$this->id,
-            'column_id'=>$this->column_id,
+            'project_id'=>$this->project_id,
             'title'=>$this->title,
             'color'=>$this->color,
-            'description'=>$this->description,
-            'deadline'=>$this->deadline,
+            'tasks'=> TaskResource::collection($this->task),
         ];
     }
 }

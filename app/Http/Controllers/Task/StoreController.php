@@ -14,7 +14,6 @@ class StoreController extends Controller
    {
         $data=$request->validated();
         $task = Task::create($data);
-        return $task;
         return new TaskResource($task);
    }
 }

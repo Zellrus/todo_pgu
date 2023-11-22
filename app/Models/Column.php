@@ -11,7 +11,11 @@ class Column extends Model
     {
         return $this->belongsTo(Project::class);
     }
-    public function task(){
-        return $this->belongsTo(Task::class);
+//    public function task(){
+//        return $this->belongsTo(Task::class);
+//    }
+    public function task()
+    {
+        return $this->hasMany(Task::class);
     }
 }

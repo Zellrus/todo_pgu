@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\Project;
 
+use App\Http\Resources\Column\ColumnResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -17,8 +18,9 @@ class ProjectResource extends JsonResource
        return [
            'id'=>$this->id,
            'title'=>$this->title,
-           'project_color'=>$this->project_color,
+           'color'=>$this->project_color,
            'description'=>$this->description,
+//           'columns'=> ColumnResource::collection($this->columns),
         ];
     }
 }
