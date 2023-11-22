@@ -9,8 +9,13 @@ return new class extends Migration {
     {
         Schema::create('columns', function (Blueprint $table) {
             $table->id();
+            $table->integer('sorting');
             $table->string('title');
-//            $table->string('color');
+            $table->string('color')->default('#000');
+//            $table->string('description')->nullable();
+            $table->unsignedBigInteger('project_id');
+            $table->index('project_id','columns_project_idx');
+            $table->foreign('project_id','columns_project_fk')->on('projects')->references('id')->onDelete('cascade');
             $table->timestamps();
         });
     }

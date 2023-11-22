@@ -13,16 +13,13 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
              $table->id();
-             $table->string('name');
-             $table->string('color');
-             $table->dateTime('deadline');
+             $table->string('title');
+             $table->string('color')->default('#000');
+             $table->dateTime('deadline')->nullable();
              $table->string('description')->nullable();
-             $table->unsignedBigInteger('project_id');
-             $table->index('project_id','tasks_project_idx');
-             $table->foreign('project_id','tasks_project_fk')->on('projects')->references('id')->onDelete('cascade');
-             $table->unsignedBigInteger('column_id')->default(1);
+             $table->unsignedBigInteger('column_id');
              $table->index('column_id','tasks_column_idx');
-             $table->foreign('column_id','tasks_column_fk')->on('columns')->references('id');
+             $table->foreign('column_id','tasks_column_fk')->on('columns')->references('id')->onDelete('cascade');
              $table->timestamps();
         });
     }

@@ -9,11 +9,9 @@ class Task extends Model
 {
     use HasFactory;
     protected $guarded=false;
-    public function project()
+    public function columns()
     {
-        return $this->belongsTo(Project::class);
+        return $this->belongsTo(Column::class);
     }
-    public function column(){
-        return $this->belongsTo(Column::class,'column_id','id');
-    }
+
 }

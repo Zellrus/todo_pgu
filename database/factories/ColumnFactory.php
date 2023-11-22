@@ -2,13 +2,13 @@
 
 namespace Database\Factories;
 
-use App\Models\Column;
+use App\Models\ColumnTitle;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
 
 class ColumnFactory extends Factory
 {
-    protected $model = Column::class;
+    protected $model = ColumnTitle::class;
 
     public function definition(): array
     {

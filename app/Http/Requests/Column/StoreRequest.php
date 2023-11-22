@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Task;
+namespace App\Http\Requests\Column;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -22,12 +22,12 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'column_id'=>'required|integer',
-//            'project_id'=>'required|integer',
+            'project_id'=>'required|integer',
+            'sorting'=>'integer|required',
             'title'=>'required|string',
-            'description'=>'string',
+//            'description'=>'string',
             'color'=>'string',
-            'deadline'=>'date'
+//            'deadline'=>'date'
         ];
     }
 }

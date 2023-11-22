@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Task;
+namespace App\Http\Requests\Column;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -11,9 +11,8 @@ class UpdateRequest extends FormRequest
         return [
             'column_id'=>'integer',
             'title'=>'string',
-            'description'=>'string',
+//            'description'=>'string',
             'color'=>'string',
-            'deadline'=>'date'
         ];
     }
 

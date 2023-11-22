@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Column;
+use App\Models\ColumnTitle;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,17 +20,6 @@ class DatabaseSeeder extends Seeder
              'surname'=>'Sh',
              'email' => 'test@example.com',
          ]);
-         Column::factory()->create([
-             'id'=>'1',
-             'title'=>'Отложено',
-         ]);
-        Column::factory()->create([
-            'id'=>'2',
-            'title'=>'В процессе',
-        ]);
-        Column::factory()->create([
-            'id'=>'3',
-            'title'=>'Завершено',
-        ]);
+
     }
 }

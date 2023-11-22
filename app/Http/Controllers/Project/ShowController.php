@@ -27,10 +27,10 @@ class ShowController extends Controller
 //    return $project;
      return new OneProjectResource($project);
     }
-    public function tasks($id)
+    public function columns($id)
     {
         $project=Project::find($id);
 //        dd($project);
-        return TaskResource::collection($project->tasks);
+        return ColumnResource::collection($project->columns);
     }
 }
