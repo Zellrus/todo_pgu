@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->string('description')->nullable();
-            $table->string('project_color');
+            $table->string('color')->default('#000');
             $table->timestamps();
         });
     }

@@ -18,7 +18,7 @@ class ProjectResource extends JsonResource
        return [
            'id'=>$this->id,
            'title'=>$this->title,
-           'color'=>$this->project_color,
+           'color'=>$this->color,
            'description'=>$this->description,
 //           'columns'=> ColumnResource::collection($this->columns),
         ];

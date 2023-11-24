@@ -1,0 +1,153 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Doc TODO_PGU API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/": {},
+        "/api/projects": {
+            "get": {
+                "tags": [
+                    "Project"
+                ],
+                "summary": "Получение списка проектов",
+                "operationId": "7efa3252052d64b108f91dae560ef93c",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "project_id": {
+                                                "description": "Получение проекта по его id",
+                                                "type": "integer",
+                                                "example": 1
+                                            },
+                                            "isdetail": {
+                                                "description": "Флаг получения детального ответа",
+                                                "type": "boolean",
+                                                "default": true,
+                                                "example": false
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 1
+                                                    },
+                                                    "title": {
+                                                        "type": "string",
+                                                        "example": "Какой-нибудь заголовок"
+                                                    },
+                                                    "description": {
+                                                        "type": "string",
+                                                        "example": "Какое-нибудь описание"
+                                                    },
+                                                    "color": {
+                                                        "type": "string",
+                                                        "example": "#000"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Project"
+                ],
+                "summary": "Создание проекта",
+                "operationId": "7698c42359bfbedb9efad6a30c59a068",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "title": {
+                                                "type": "string|required",
+                                                "example": "Какой-нибудь заголовок"
+                                            },
+                                            "description": {
+                                                "type": "string|required",
+                                                "example": "Какое-нибудь описание"
+                                            },
+                                            "color": {
+                                                "type": "string",
+                                                "default": "#000",
+                                                "example": "#000"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "title": {
+                                                    "type": "string",
+                                                    "example": "Какой-нибудь заголовок"
+                                                },
+                                                "description": {
+                                                    "type": "string",
+                                                    "example": "Какое-нибудь описание"
+                                                },
+                                                "color": {
+                                                    "type": "string",
+                                                    "example": "#000"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

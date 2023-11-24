@@ -24,7 +24,7 @@ class UpdateRequest extends FormRequest
         return [
             'title'=>'string',
             'description'=>'string',
-            "project_color"=>'string',
+            "color"=>'string',
         ];
     }
 }

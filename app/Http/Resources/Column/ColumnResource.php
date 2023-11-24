@@ -20,7 +20,7 @@ class ColumnResource extends JsonResource
             'project_id'=>$this->project_id,
             'title'=>$this->title,
             'color'=>$this->color,
-            'tasks'=> TaskResource::collection($this->task),
+            'tasks'=> TaskResource::collection($this->tasks),
         ];
     }
 }
