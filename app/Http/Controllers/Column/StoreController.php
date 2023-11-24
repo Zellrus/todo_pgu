@@ -13,8 +13,10 @@ class StoreController extends Controller
 {
    public function __invoke(StoreRequest $request)
    {
+
         $data=$request->validated();
         $column = Column::create($data);
+
         return new ColumnResource($column);
    }
 }

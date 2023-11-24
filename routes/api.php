@@ -17,31 +17,35 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
+
 Route::group(['middleware' => 'auth:sanctum'],function (){
     //проекты
-    Route::get('/projects',[App\Http\Controllers\Project\ShowController::class,'all']); // получение всех проектов юзера без подробностей
-    Route::get('/projects/{project}',[App\Http\Controllers\Project\ShowController::class,'one']); //получение подробностей одного проекта
+    // null - получение всех проектов юзера;
+    // int project_id - получение проекта по его id;
+    // boot isdetail - получение детального ответа (по умолчанию true)
+    Route::get('/projects',App\Http\Controllers\Project\ShowController::class);
     Route::post('/projects',\App\Http\Controllers\Project\StoreController::class);
     Route::patch('/projects/{project}', \App\Http\Controllers\Project\UpdateController::class);
     Route::delete('/projects/{project}',\App\Http\Controllers\Project\DeleteController::class);
 
 
     //колонки
-    Route::get('/columns/{project}',[\App\Http\Controllers\Column\ShowController::class,'all']); //получение колонок по id проекта
-    Route::get('/column/{id}',[\App\Http\Controllers\Column\ShowController::class,'one']); //получение колонки по его id
+    // int project_id - получение колонок по id проекта;
+    // int column_id - получение колонки по ее id
+    Route::get('/columns',\App\Http\Controllers\Column\ShowController::class,);
     Route::post('/columns',\App\Http\Controllers\Column\StoreController::class);
     Route::patch('/column/{column}', \App\Http\Controllers\Column\UpdateController::class);
     Route::delete('/column/{column}',\App\Http\Controllers\Column\DeleteController::class);
 
 
     //задачи
-    Route::get('/tasks/{column}/',[\App\Http\Controllers\Task\ShowController::class,'all']); // получение задач по id колонки
-    Route::get('/task/{id}',[\App\Http\Controllers\Task\ShowController::class,'one']); //получение задачи по его id
+    // int project_id -получение задач по id проекта;
+    // int column_id - получение задачи по id колонки;
+    // int task_id - получение задачи по ее id
+    Route::get('/tasks',\App\Http\Controllers\Task\ShowController::class);
     Route::post('/tasks',\App\Http\Controllers\Task\StoreController::class);
     Route::patch('/tasks/{task}', \App\Http\Controllers\Task\UpdateController::class);
     Route::delete('/tasks/{task}',\App\Http\Controllers\Task\DeleteController::class);
-
-
 
 });
 

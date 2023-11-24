@@ -14,7 +14,7 @@ class Column extends Model
 //    public function task(){
 //        return $this->belongsTo(Task::class);
 //    }
-    public function task()
+    public function tasks()
     {
         return $this->hasMany(Task::class);
     }

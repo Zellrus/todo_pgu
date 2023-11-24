@@ -168,6 +168,9 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'csrf_token' => [
+            'required' => 'Токен CSRF отсутствует или устарел. Пожалуйста, попробуйте отправить форму еще раз.',
+        ],
     ],
 
     /*

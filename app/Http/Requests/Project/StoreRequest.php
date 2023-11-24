@@ -24,8 +24,12 @@ class StoreRequest extends FormRequest
         return [
             'title'=>'string|required',
             'description'=>'string',
-            "project_color"=>'string|required',
-//            'users'=>'array',
+            "color"=>'string',
+
         ];
+    }
+    public function messages()
+    {
+        return [];
     }
 }

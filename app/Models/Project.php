@@ -16,4 +16,5 @@ class Project extends Model
     {
         return $this->hasMany(Column::class);
     }
+
 }
