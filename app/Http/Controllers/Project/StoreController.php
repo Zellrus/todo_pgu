@@ -49,7 +49,7 @@ class StoreController extends Controller
         $data=$request->validated();
         $project= Project::create($data);
         $project->users()->attach(auth()->user()->id);
-
+        $project = $project->fresh();
       return new ProjectResource($project);
     }
 }

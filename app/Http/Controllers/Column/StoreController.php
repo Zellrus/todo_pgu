@@ -16,7 +16,7 @@ class StoreController extends Controller
 
         $data=$request->validated();
         $column = Column::create($data);
-
+        $column = $column->fresh();
         return new ColumnResource($column);
    }
 }
