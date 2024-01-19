@@ -17,7 +17,7 @@ class StoreController extends Controller
         $data['sorting'] = (Column::where('project_id', $data['project_id'])->max('sorting'))+1;
 
         $column = Column::create($data);
-
+        $column = $column->fresh();
         return new ColumnResource($column);
    }
 }
