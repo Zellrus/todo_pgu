@@ -13,6 +13,7 @@ class UpdateRequest extends FormRequest
             'title'=>'string',
 //            'description'=>'string',
             'color'=>'string',
+            'sorting'=>'integer'
         ];
     }
 

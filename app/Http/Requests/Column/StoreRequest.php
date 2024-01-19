@@ -23,7 +23,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'project_id'=>'required|integer',
-            'sorting'=>'integer|required',
+//            'sorting'=>'integer|required',
             'title'=>'required|string',
 //            'description'=>'string',
             'color'=>'string',

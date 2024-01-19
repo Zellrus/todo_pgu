@@ -14,6 +14,16 @@ class UpdateController extends Controller
     {
         $column = Column::find($column);
         $data = $request->validated();
+
+        $maxSorting = (Column::where('project_id', $column->project_id)->max('sorting'))+1;
+        if (isset($data['sorting'])){
+            if ($data['sorting'] < $maxSorting) {
+                // Обновляем текущую колонку
+                Column::where('project_id', $column->project_id)
+                    ->where('sorting', '>=', $data['sorting'])
+                    ->increment('sorting');
+            }
+        }
         $column->update($data);
         return new ColumnResource($column);
     }
