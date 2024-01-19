@@ -18,7 +18,7 @@ class UpdateController extends Controller
         $maxSorting = (Column::where('project_id', $column->project_id)->max('sorting'))+1;
         if (isset($data['sorting'])){
             if ($data['sorting'] < $maxSorting) {
-                // Обновляем текущую колонку
+                //обновляем столбец sorting
                 Column::where('project_id', $column->project_id)
                     ->where('sorting', '>=', $data['sorting'])
                     ->increment('sorting');
